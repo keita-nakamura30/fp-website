@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>中村啓太｜ファイナンシャルプランナー</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #0074D9;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(to right, #0074D9, #66BFFF);
+      color: white;
+    }
+    .hero h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    .cta-button {
+      background-color: white;
+      color: #0074D9;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #e6f7ff;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      color: #0074D9;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .services, .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .service, .testimonial {
+      flex: 1;
+      min-width: 280px;
+      background: #f4faff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 116, 217, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .service:hover, .testimonial:hover {
+      transform: translateY(-5px);
+    }
+    footer {
+      background-color: #0074D9;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    .contact-form button {
+      background-color: #0074D9;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>中村啓太｜FPオフィス</div>
+    <nav>
+      <a href="#services">サービス</a>
+      <a href="#profile">プロフィール</a>
+      <a href="#testimonials">お客様の声</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>未来を“見える化”するライフプランニング</h1>
+    <p>住宅購入・キャッシュフロー作成・資産形成。あなたの未来設計をサポートします。</p>
+    <a class="cta-button" href="#contact">無料相談はこちら</a>
+  </section>
+
+  <section id="services">
+    <h2>サービス内容</h2>
+    <div class="services">
+      <div class="service">
+        <h3>住宅購入サポート</h3>
+        <p>住宅購入に必要な資金計画や住宅ローン相談をサポート。</p>
+      </div>
+      <div class="service">
+        <h3>キャッシュフロー表作成</h3>
+        <p>人生のイベントに合わせたシミュレーションで安心の資金計画。</p>
+      </div>
+      <div class="service">
+        <h3>法人向け財務アドバイス</h3>
+        <p>経営者や法人向けに資産運用や資金繰り改善を提案。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="profile">
+    <h2>プロフィール</h2>
+    <p>中村啓太｜ファイナンシャルプランナー<br>
+    MDRT会員、留学経験を活かし、国内外で幅広く資産形成サポートを行っています。<br>
+    趣味はサーフィン。気軽にご相談ください！</p>
+  </section>
+
+  <section id="testimonials">
+    <h2>お客様の声</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>「住宅購入の不安がなくなり、安心してマイホームを購入できました！」</p>
+      </div>
+      <div class="testimonial">
+        <p>「キャッシュフロー表で老後資金が見える化でき、将来が楽しみになりました。」</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ</h2>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="お名前" required />
+      <input type="email" name="email" placeholder="メールアドレス" required />
+      <textarea name="message" rows="5" placeholder="ご相談内容" required></textarea>
+      <button type="submit">送信する</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 中村啓太｜ファイナンシャルプランナーオフィス</p>
+  </footer>
+</body>
+</ht
