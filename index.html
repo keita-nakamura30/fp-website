@@ -3,84 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ファイナンシャルプランナー | 中村啓太</title>
+  <title>ファイナンシャルプランナー｜中村啓太</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: #ffffff;
-      color: #333333;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background-color: #f4f7fc;
+      color: #333;
       line-height: 1.6;
-      overflow-x: hidden;
     }
     header {
-      background-color: #0074D9;
+      background-color: #0074d9;
       color: white;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 20px 0;
+      text-align: center;
     }
-    header img {
-      height: 120px;
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #eaf3fb;
+    }
+    .hero img {
+      max-width: 200px;
       border-radius: 50%;
-      margin-right: 20px;
+      margin-bottom: 20px;
     }
-    section {
-      max-width: 800px;
+    .hero h2 {
+      margin-bottom: 10px;
+    }
+    .section {
+      max-width: 900px;
       margin: 40px auto;
       padding: 20px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+    .slider img {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      scroll-snap-align: center;
+      border-radius: 8px;
     }
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #f8f8f8;
+      background-color: #0074d9;
+      color: white;
     }
-    iframe {
-      width: 100%;
-      height: 600px;
+    button.contact {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #ff4136;
+      color: white;
       border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
     }
-    /* スマホ対応 */
     @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        text-align: center;
+      .hero h2 {
+        font-size: 18px;
       }
-      header img {
-        margin-bottom: 10px;
-      }
-      iframe {
-        height: 400px;
+      nav a {
+        display: block;
+        margin: 5px 0;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="IMG_6495.JPG" alt="中村啓太プロフィール写真" />
-    <h1>ファイナンシャルプランナー | 中村啓太</h1>
+    <h1>ファイナンシャルプランナー｜中村啓太</h1>
+    <nav>
+      <a href="#about">プロフィール</a>
+      <a href="#service">サービス</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
   </header>
 
-  <section>
-    <h2>サービス説明</h2>
-    <p>こちらからサービス内容をご覧いただけます。</p>
-    <iframe src="sample.pdf"></iframe>
+  <section class="hero">
+    <img src="IMG_6495.JPG" alt="中村啓太 プロフィール写真">
+    <h2>あなたの未来を共に描く、信頼のパートナー</h2>
+    <p>資産形成・住宅購入・老後資金まで、分かりやすくサポートします。</p>
+    <button class="contact" onclick="document.getElementById('contact').scrollIntoView();">無料相談はこちら</button>
   </section>
 
-  <section>
+  <section class="section" id="service">
+    <h2>サービス説明</h2>
+    <div class="slider">
+      <img src="スクリーンショット 2025-04-13 14.08.39.png" alt="キャッシュフロー1">
+      <img src="スクリーンショット 2025-04-13 14.08.49.png" alt="キャッシュフロー2">
+      <img src="スクリーンショット ①.png" alt="キャッシュフロー3">
+    </div>
+  </section>
+
+  <section class="section" id="contact">
     <h2>お問い合わせ</h2>
-    <p>ご相談やお問い合わせは <a href="#">こちらから</a> お気軽にご連絡ください。</p>
+    <p style="text-align:center;">ご相談やお問い合わせは、以下のボタンからお気軽にご連絡ください。</p>
+    <button class="contact" onclick="window.location.href='mailto:your-email@example.com';">メールで相談する</button>
   </section>
 
   <footer>
@@ -89,16 +136,19 @@
 
   <script>
     // スクロールアニメーション
-    const sections = document.querySelectorAll('section');
+    const sections = document.querySelectorAll('.section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.2 });
 
     sections.forEach(section => {
+      section.style.opacity = 0;
+      section.style.transform = 'translateY(50px)';
       observer.observe(section);
     });
   </script>
